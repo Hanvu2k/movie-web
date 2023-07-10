@@ -1,0 +1,65 @@
+/* Flexbox Container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* flex */
+.d-flex {
+    display: flex !important;
+}
+
+/* Flexbox Item */
+.item {
+    flex: 1 1 200px; /* flex-grow, flex-shrink, flex-basis */
+    margin: 10px;
+}
+
+/* Flexbox Classes */
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.align-items-start {
+    align-items: flex-start;
+}
+
+.align-items-end {
+    align-items: flex-end;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-baseline {
+    align-items: baseline;
+}
+
+.align-items-stretch {
+    align-items: stretch;
+}

@@ -1,0 +1,29 @@
+/* css movie list */
+.movie-list {
+    display: grid;
+    grid-auto-flow: column;
+    padding: 12px;
+    gap: 14px;
+    cursor: pointer;
+}
+
+/* scroll bar */
+.scroll-bar {
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+}
+
+.scroll-bar::-webkit-scrollbar {
+    height: 6px;
+}
+
+.scroll-bar::-webkit-scrollbar-track {
+    background-color: #555; /* Scrollbar track color */
+    border-radius: 5px; /* Border radius of the thumb */
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+    background-color: #11171a; /* Scrollbar thumb color */
+    border-radius: 5px; /* Border radius of the thumb */
+}

@@ -1,0 +1,26 @@
+/* css movie original */
+
+.watching-movie {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 14px;
+    padding: 0 12px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.watching-movie-img {
+    height: 200px;
+    width: 135px;
+    transition: 0.1s ease-in-out;
+}
+
+.watching-movie-img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.watching-movie-img-link {
+    height: 200px;
+    width: 135px;
+}

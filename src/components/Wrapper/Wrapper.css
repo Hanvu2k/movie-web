@@ -1,0 +1,6 @@
+/* css wrapper */
+.wrapper {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-weight: 700;
+}

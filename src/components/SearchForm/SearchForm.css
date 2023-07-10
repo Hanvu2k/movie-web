@@ -1,0 +1,51 @@
+/* css search form */
+
+.search-form {
+    background-color: #ffffff;
+    width: 400px;
+    height: 130px;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+}
+
+.search-input-box {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--blue);
+    padding: 16px 0 16px 16px;
+    font-size: 16px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.search-icon-link {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.btn-seacrh {
+    width: 100%;
+}
+
+/* validate */
+
+.validate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(50%);
+    color: red;
+    background-color: white;
+    text-align: center;
+    border-radius: 18px;
+    padding: 8px 16px;
+}

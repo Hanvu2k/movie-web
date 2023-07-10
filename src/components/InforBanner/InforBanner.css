@@ -1,0 +1,37 @@
+.banner-container {
+    position: relative;
+}
+
+.banner-img {
+    height: 400px;
+    width: 100%;
+}
+
+.banner-img-link {
+    height: 100%;
+    width: 100%;
+}
+
+.banner-info {
+    position: absolute;
+    bottom: 0;
+    transform: translatey(-50%);
+}
+
+.banner-title {
+    color: var(--text-color);
+}
+
+/* infor banner css */
+.banner-description {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 14px;
+    width: 400px;
+    height: 60px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

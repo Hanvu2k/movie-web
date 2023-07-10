@@ -1,0 +1,17 @@
+/* css movie item */
+
+.movie-item {
+    height: 110px;
+    width: 200px;
+    transition: ease-in-out 0.1s;
+}
+
+.movie-item:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.movie-item-link {
+    width: 100%;
+    height: 100%;
+}

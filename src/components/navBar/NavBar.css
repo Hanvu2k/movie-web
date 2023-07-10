@@ -1,0 +1,34 @@
+/* css nav bar */
+
+.navbar-container {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    padding: 8px 16px;
+    overflow: overlay;
+    z-index: 1000;
+}
+
+.navbar-tittle {
+    color: var(--red);
+}
+
+.navbar-tittle:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.navbar-link {
+    all: unset;
+    color: "inherit";
+}
+
+.navbar-background {
+    background: var(--primary-color);
+}
+
+.navbar-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
