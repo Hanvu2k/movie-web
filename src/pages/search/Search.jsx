@@ -1,7 +1,13 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 
 // Import SearchMovies from Api
-import SearchMovies from "../../api/searchMovies";
+import {
+    SearchMovies,
+    SearchMoviesGenre,
+    SearchMoviesYear,
+    SearchMoviesMediaType,
+    SearchMoviesLanguage,
+} from "../../api/searchMovies";
 
 // Import component
 import NavBar from "../../components/navBar/NavBar";
@@ -11,6 +17,7 @@ import ResultList from "../../components/ResultList/ResultList";
 
 // Import Css style
 import "./Search.css";
+import SearchFormOption from "../../components/SearchForm/SearchFormOption";
 
 const Search = () => {
     // State variables
@@ -25,6 +32,15 @@ const Search = () => {
     const [isCurrentArr, setIsCurrentArr] = useState(); // Stores the current array of movies being displayed
 
     const [error, setError] = useState(null); // Stores any error that occurred during the search
+
+    const [genre, setGenre] = useState(""); // Default value for Genre
+    const [mediaType, setMediaType] = useState(""); // Default value for MediaType
+    const [language, setLanguage] = useState(""); // Default value for Language
+    const [year, setYear] = useState(""); // Default value for Year
+
+    const genreRef = useRef();
+    const mediaTypeRef = useRef();
+    const languageRef = useRef();
 
     // handle search input
     const handleSearchInput = (event) => {
@@ -88,6 +104,113 @@ const Search = () => {
         setIsValueDate(false);
     };
 
+    // handle Search Gener
+    const handleSearchGener = async (event) => {
+        event.preventDefault();
+        const searchGenre = genreRef.current.value;
+
+        setGenre(searchGenre);
+        setMediaType("");
+        setLanguage("");
+        setYear("");
+        try {
+            setIsLoading(true); // Set loading state to true
+            const data = await SearchMoviesGenre(searchGenre);
+            if (data.success === true) {
+                setResultSearch(data.results);
+                setError(null);
+            } else {
+                setError(data.message);
+                setResultSearch(data.results);
+            }
+            setIsLoading(false); // Set loading state to true
+        } catch (error) {
+            console.log(error.message);
+            setIsLoading(false); // Set loading state to true
+            setError(error.message); // Set the error message
+        }
+    };
+
+    // handle Search Media Type
+    const handleSearchMediaType = async (event) => {
+        event.preventDefault();
+        const searchMediaType = mediaTypeRef.current.value;
+
+        setGenre("");
+        setMediaType(searchMediaType);
+        setLanguage("");
+        setYear("");
+
+        try {
+            setIsLoading(true); // Set loading state to true
+            const data = await SearchMoviesMediaType(searchMediaType);
+            if (data.success === true) {
+                setResultSearch(data.results);
+                setError(null);
+            } else {
+                setError(data.message);
+                setResultSearch(data.results);
+            }
+            setIsLoading(false); // Set loading state to true
+        } catch (error) {
+            console.log(error.message);
+            setIsLoading(false); // Set loading state to true
+            setError(error.message); // Set the error message
+        }
+    };
+
+    // handle Search Year
+    const handleSearchYear = async (event) => {
+        event.preventDefault();
+        const searchYear = year;
+
+        setGenre("");
+        setMediaType("");
+        setLanguage("");
+        try {
+            setIsLoading(true); // Set loading state to true
+            const data = await SearchMoviesYear(searchYear);
+            if (data.success === true) {
+                setResultSearch(data.results);
+                setError(null);
+            } else {
+                setError(data.message);
+                setResultSearch(data.results);
+            }
+            setIsLoading(false); // Set loading state to true
+        } catch (error) {
+            console.log(error.message);
+            setIsLoading(false); // Set loading state to true
+            setError(error.message); // Set the error message
+        }
+    };
+
+    // handle Search Language
+    const handleSearchLanguage = async (event) => {
+        event.preventDefault();
+        const searchLanguage = languageRef.current.value;
+
+        setGenre("");
+        setMediaType("");
+        setLanguage(searchLanguage);
+        try {
+            setIsLoading(true); // Set loading state to true
+            const data = await SearchMoviesLanguage(searchLanguage);
+            if (data.success === true) {
+                setResultSearch(data.results);
+                setError(null);
+            } else {
+                setError(data.message);
+                setResultSearch(data.results);
+            }
+            setIsLoading(false); // Set loading state to true
+        } catch (error) {
+            console.log(error.message);
+            setIsLoading(false); // Set loading state to true
+            setError(error.message); // Set the error message
+        }
+    };
+
     return (
         <div className="app">
             <NavBar />
@@ -105,6 +228,20 @@ const Search = () => {
                         }
                         keySearch={keySearch}
                         onReset={handleReset}
+                    />
+                    <SearchFormOption
+                        genre={genre}
+                        genreRef={genreRef}
+                        mediaType={mediaType}
+                        mediaTypeRef={mediaTypeRef}
+                        language={language}
+                        languageRef={languageRef}
+                        setYear={setYear}
+                        year={year}
+                        handleSearchGener={handleSearchGener}
+                        handleSearchMediaType={handleSearchMediaType}
+                        handleSearchLanguage={handleSearchLanguage}
+                        handleSearchYear={handleSearchYear}
                     />
                     <ResultList
                         isLoading={isLoading}

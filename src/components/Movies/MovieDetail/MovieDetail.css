@@ -1,14 +1,15 @@
 /* css movie detail */
 .movie-detail-container {
-    gap: 16px;
+    padding: 32px 0;
+    position: relative;
     align-items: flex-start;
-    width: 100%;
 }
 
 .movie-detail-content {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    max-width: 700px;
 }
 
 .strok {
@@ -23,4 +24,15 @@
 .movie-item-link {
     width: 742px;
     height: 400px;
+}
+
+.btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.btn-close:hover {
+    cursor: pointer;
 }

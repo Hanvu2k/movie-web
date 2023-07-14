@@ -1,19 +1,18 @@
 // Api link
-const API_URL = "https://api.themoviedb.org/3";
-// Api key
-const API_KEY = "f3aece616e513f5e89642d1a45ddb5cf";
+const API_URL = "http://localhost:8080/api/v1/movies/";
+// token
+const token = "8qlOkxz4wq";
 
 // Define different API endpoints for fetching movies based on categories or genres
 const requests = {
-    fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
-    fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_network=123`,
-    fetchTopRated: `/movie/top_rated?api_key=${API_KEY}&language=en-US`,
-    fetchActionMovies: `/discover/movie?api_key=${API_KEY}&with_genres=28`,
-    fetchComedyMovies: `/discover/movie?api_key=${API_KEY}&with_genres=35`,
-    fetchHorrorMovies: `/discover/movie?api_key=${API_KEY}&with_genres=27`,
-    fetchRomanceMovies: `/discover/movie?api_key=${API_KEY}&with_genres=10749`,
-    fetchDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99`,
-    fetchSearch: `/search/movie?api_key=${API_KEY}&language=en-US`,
+    fetchTrending: `trending?token=${token}`,
+    fetchTopRated: `/top-rate?token=${token}`,
+    fetchNetflixOriginals: `/discover/12?token=${token}`,
+    fetchActionMovies: `/discover/28?token=${token}`,
+    fetchComedyMovies: `/discover/35?token=${token}`,
+    fetchHorrorMovies: `/discover/27?token=${token}`,
+    fetchRomanceMovies: `/discover/10749?token=${token}`,
+    fetchDocumentaries: `/discover/99?token=${token}`,
 };
 
 // Function to fetch movie data from The Movie Database (TMDB) API based on different types

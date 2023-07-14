@@ -31,9 +31,8 @@ function InforBanner() {
                 <img
                     className="banner-img-link"
                     src={
-                        newbannersData?.backdrop_path
-                            ? `https://image.tmdb.org/t/p/original${newbannersData.backdrop_path}`
-                            : `https://ecdn.game4v.com/g4v-content/uploads/2021/12/15100210/Dragon-Ball-Super-Super-Hero-1639537329-67-e1639537364959.jpg`
+                        newbannersData?.backdrop_path &&
+                        `https://image.tmdb.org/t/p/original${newbannersData.backdrop_path}`
                     }
                     alt="banner"
                 />

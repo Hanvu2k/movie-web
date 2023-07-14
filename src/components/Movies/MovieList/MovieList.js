@@ -32,11 +32,12 @@ function MovieList(props) {
             {isOpenDetail && selectedMovie && (
                 <MovieDetail
                     id={selectedMovie.id}
-                    title={selectedMovie.title}
+                    title={selectedMovie.name}
                     release_date={selectedMovie.release_date}
                     vote_average={selectedMovie.vote_average}
                     description={selectedMovie.overview}
                     img_url={selectedMovie.backdrop_path}
+                    isCloseBtn={false}
                 />
             )}
         </div>
