@@ -6,7 +6,7 @@ export const SearchMovies = async (keywords) => {
     try {
         // Fetch the movies based on the provided keywords using the TMDB API
         const res = await fetch(
-            `http://localhost:8080/api/v1/movies/search/${keywords}?token=${token}`
+            `https://movieweb-server.onrender.com/api/v1/movies/search/${keywords}?token=${token}`
         );
         const data = await res.json();
 
@@ -22,7 +22,7 @@ export const SearchMoviesGenre = async (genre) => {
     try {
         // Fetch the movies based on the provided keywords using the TMDB API
         const res = await fetch(
-            `http://localhost:8080/api/v1/movies/search?genre=${genre}&token=${token}`
+            `https://movieweb-server.onrender.com/api/v1/movies/search?genre=${genre}&token=${token}`
         );
         const data = await res.json();
 
@@ -36,7 +36,7 @@ export const SearchMoviesYear = async (year) => {
     try {
         // Fetch the movies based on the provided keywords using the TMDB API
         const res = await fetch(
-            `http://localhost:8080/api/v1/movies/search?year=${year}&token=${token}`
+            `https://movieweb-server.onrender.com/api/v1/movies/search?year=${year}&token=${token}`
         );
         const data = await res.json();
 
@@ -50,7 +50,7 @@ export const SearchMoviesMediaType = async (media_type) => {
     try {
         // Fetch the movies based on the provided keywords using the TMDB API
         const res = await fetch(
-            `http://localhost:8080/api/v1/movies/search?media_type=${media_type}&token=${token}`
+            `https://movieweb-server.onrender.com/api/v1/movies/search?media_type=${media_type}&token=${token}`
         );
         const data = await res.json();
 
@@ -64,7 +64,7 @@ export const SearchMoviesLanguage = async (language) => {
     try {
         // Fetch the movies based on the provided keywords using the TMDB API
         const res = await fetch(
-            `http://localhost:8080/api/v1/movies/search?language=${language}&token=${token}`
+            `https://movieweb-server.onrender.com/api/v1/movies/search?language=${language}&token=${token}`
         );
         const data = await res.json();
 
