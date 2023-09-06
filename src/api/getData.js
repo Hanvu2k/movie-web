@@ -1,5 +1,5 @@
 // Api link
-const API_URL = "http://localhost:8080/api/v1/movies/";
+const API_URL = "https://movieweb-server.onrender.com/";
 // token
 const token = "8qlOkxz4wq";
 
