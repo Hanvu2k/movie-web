@@ -14,10 +14,10 @@ import NavBar from "../../components/navBar/NavBar";
 import Wrapper from "../../components/Wrapper/Wrapper";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import ResultList from "../../components/ResultList/ResultList";
+import SearchFormOption from "../../components/SearchForm/SearchFormOption";
 
 // Import Css style
 import "./Search.css";
-import SearchFormOption from "../../components/SearchForm/SearchFormOption";
 
 const Search = () => {
     // State variables
