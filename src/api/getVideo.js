@@ -6,7 +6,7 @@ const getVideo = async (movie_id) => {
     try {
         // Fetch the videos for the given movie ID using the TMDB API
         const res = await fetch(
-            `http://localhost:8080/api/v1/movies/video/${movie_id}?token=${token}`
+            `https://movieweb-server.onrender.com/api/v1/movies/video/${movie_id}?token=${token}`
         );
 
         const data = await res.json();
